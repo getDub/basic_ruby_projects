@@ -3,6 +3,7 @@ def caesar_cipher(string, num)
  split_string = string.chars.map do |letters|
   if letters.match(/[A-Z]/)
     word = letters.ord + num
+    # word = letters.to_i
     word = word + 26 if word < 65
     word = word - 26 if word > 90
   elsif letters.match(/[a-z]/)
@@ -18,5 +19,5 @@ end
 p split_string.join()
 end
 
-caesar_cipher("What a String!", 5)
+puts caesar_cipher("What a String!", 5).length
 # caesar_cipher("I'm hungry", 13)
