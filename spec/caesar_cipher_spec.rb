@@ -1,30 +1,19 @@
 require_relative '../lib/caeser_cipher'
 
+# Stubbing(allow) vs Mocking(expect)
+# Stubbing is supplying fake data to test vs Mocking is verifying 
+# if a method was called.
+# Stubbing doesn't care if meothd is ever called vs Mocking is strict.
+# It will fail if the method is not called.
+# Stubbing simulates an database look up or an API state vs Mocking is 
+# verifying that an alery or email notification was triggered.
+
 describe '#caesar_cipher' do
-  let(:letter) { 'what' }
-  context 'when provided a string' do
-    it 'will match the first and last letter in the string' do
-    letter.match(/[a-z]/)
-    expect(letter.chars).to start_with('w').and end_with('t')
-    end
+  it 'moves each letter by the number given' do
+    expect(caesar_cipher('abc', 3)).to eq('def')
   end
-  context 'when string is split into an array and sampled' do
-    it 'will equal all letters in word what' do
-      expect(letter.chars.sample).to eq('w').or eq('h').or eq('a').or eq('t')
-    end
-  end
-  context 'when method is called' do
-    it 'will return the length of the string' do
-      rando_string = 'What a String!'
-      rando_number = 5
-      result = caesar_cipher(rando_string, rando_number)
-      expect(result.length).to eq(14)
-    end
-    it 'will return the encrypte answer' do
-      rando_string = 'What a String!'
-      rando_number = 5
-      result = caesar_cipher(rando_string, rando_number)
-      expect(result).to eq('Bmfy f Xywnsl!')
-    end
+
+  it 'moves backward in the alphabet when given a negative number' do
+    expect(caesar_cipher('def', -3)).to eq('abc')
   end
 end
