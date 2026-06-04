@@ -34,4 +34,8 @@ describe '#caesar_cipher' do
   it 'recognizes mixed case' do
     expect(caesar_cipher('aBc', 3)).to eq('dEf')
   end
+
+  it 'returns the unciphered word when num is 0' do
+    expect(caesar_cipher('Ruby', 0)).to eq('Ruby')
+  end
 end

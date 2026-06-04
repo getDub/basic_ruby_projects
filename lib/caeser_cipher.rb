@@ -19,7 +19,7 @@ def caesar_cipher(string, num)
 end
 
 # puts caesar_cipher("What a String!", 5).length
-# p caesar_cipher("Pink", -2)
+# puts caesar_cipher("Pink", -2)
 # p caesar_cipher("ZZ", 6)
 # p caesar_cipher("I'm hungry", 15)
 # p caesar_cipher("I'm hungry", 23)
