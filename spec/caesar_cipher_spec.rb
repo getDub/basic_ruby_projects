@@ -26,4 +26,12 @@ describe '#caesar_cipher' do
     expect(caesar_cipher('aaa', -1)).to eq('zzz')
     expect(caesar_cipher('mmm', -27)).to eq('lll')
   end
+
+  it 'recognizes capitals' do 
+    expect(caesar_cipher("ABC", 3)).to eq('DEF')
+  end
+
+  it 'recognizes mixed case' do
+    expect(caesar_cipher('aBc', 3)).to eq('dEf')
+  end
 end
